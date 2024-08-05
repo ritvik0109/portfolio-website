@@ -20,3 +20,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+// TODO What does this page do?
+// TODO What is in globals.css? Remove it! Also, implement dark mode :D
