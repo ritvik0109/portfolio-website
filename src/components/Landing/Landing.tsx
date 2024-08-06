@@ -1,3 +1,5 @@
+import Hero from "../Hero/Hero";
+
 export default function Landing() {
-  return <p>Hello World! This is Ritvik here :D</p>;
+  return <Hero />;
 }
