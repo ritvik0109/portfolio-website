@@ -6,8 +6,6 @@ import {
   Text,
   Button,
   Stack,
-  Popover,
-  PopoverTrigger,
   useColorModeValue,
   useBreakpointValue,
 } from "@chakra-ui/react";
