@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import content from "../../app/data.json";
+import content from "../../content/content.json";
 
 const Logo = (props: any) => {
   return (

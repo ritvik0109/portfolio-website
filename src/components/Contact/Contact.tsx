@@ -21,7 +21,7 @@ import {
 import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsPerson } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
-import content from "../../app/data.json";
+import content from "../../content/content.json";
 
 export default function Contact() {
   return (
