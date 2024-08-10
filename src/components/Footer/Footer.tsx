@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import content from "../../app/data.json";
 
 const Logo = (props: any) => {
   return (
@@ -88,11 +89,7 @@ export default function Footer() {
       >
         <Logo />
         <Box display="flex" justifyContent="center" alignItems="center" gap="6">
-          <Link
-            href="https://github.com/yourusername"
-            isExternal
-            aria-label="GitHub"
-          >
+          <Link href={content.contact.github} isExternal aria-label="GitHub">
             <Box
               as={FaGithub}
               boxSize={iconSize}
@@ -101,7 +98,7 @@ export default function Footer() {
             />
           </Link>
           <Link
-            href="https://linkedin.com/in/yourusername"
+            href={content.contact.linkedin}
             isExternal
             aria-label="LinkedIn"
           >
@@ -112,7 +109,7 @@ export default function Footer() {
               _hover={{ transform: "scale(1.2)" }}
             />
           </Link>
-          <Link href="mailto:youremail@example.com" aria-label="Email">
+          <Link href={"mailto:" + content.contact.email} aria-label="Email">
             <Box
               as={MdEmail}
               boxSize={iconSize}

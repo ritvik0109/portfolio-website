@@ -1,0 +1,37 @@
+{
+    "heroBanner": {
+      "title": "Welcome to My Portfolio",
+      "subtitle": "Showcasing My Work and Skills",
+      "buttonText": "Explore My Projects",
+      "buttonLink": "/projects"
+    },
+    "aboutMe": {
+      "title": "About Me",
+      "description": "I am a full-stack developer with a passion for creating efficient and scalable web applications."
+    },
+    "projects": [
+      {
+        "title": "Project One",
+        "description": "A brief description of Project One.",
+        "image": "/images/project1.png",
+        "link": "/projects/project-one"
+      },
+      {
+        "title": "Project Two",
+        "description": "A brief description of Project Two.",
+        "image": "/images/project2.png",
+        "link": "/projects/project-two"
+      }
+    ],
+    "contact": {
+      "title": "Let's Talk",
+      "description": "New projects, collaborations, freelance inqury or even a coffee.",
+      "email": "ritvikmalhotra0109@gmail.com",
+      "phone": "+1 (647) 877-0965",
+      "linkedin": "https://www.linkedin.com/in/ritvik-malhotra/",
+      "github": "https://github.com/ritvik0109",
+      "city": "Toronto",
+      "country": "Canada"
+    }
+  }
+  
