@@ -8,10 +8,13 @@ import {
   Stack,
   useColorModeValue,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export default function NavBar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box width="100%">
       <Flex
@@ -38,19 +41,8 @@ export default function NavBar() {
         </Flex>
 
         {/* May want to change this button into a light/dark toggle */}
-        <Button
-          as={"a"}
-          display={{ base: "none", md: "inline-flex" }}
-          fontSize={"sm"}
-          fontWeight={600}
-          color={"white"}
-          bg={"pink.400"}
-          href={"#"}
-          _hover={{
-            bg: "pink.300",
-          }}
-        >
-          Sign Up
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Flex>
     </Box>
