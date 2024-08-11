@@ -14,6 +14,8 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
 
   return (
     <Box width="100%">
@@ -37,10 +39,27 @@ export default function NavBar() {
         </Text>
 
         <Flex flex={{ base: 1 }} justify="center">
-          <DesktopNav />
+          <Stack direction={"row"} spacing={4}>
+            {NAV_ITEMS.map((navItem) => (
+              <Box
+                key={navItem.label}
+                as="a"
+                p={2}
+                href={navItem.href ?? "#"}
+                fontSize={"sm"}
+                fontWeight={500}
+                color={linkColor}
+                _hover={{
+                  textDecoration: "none",
+                  color: linkHoverColor,
+                }}
+              >
+                {navItem.label}
+              </Box>
+            ))}
+          </Stack>
         </Flex>
 
-        {/* May want to change this button into a light/dark toggle */}
         <Button onClick={toggleColorMode}>
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
@@ -48,33 +67,6 @@ export default function NavBar() {
     </Box>
   );
 }
-
-const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-
-  return (
-    <Stack direction={"row"} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box
-          key={navItem.label}
-          as="a"
-          p={2}
-          href={navItem.href ?? "#"}
-          fontSize={"sm"}
-          fontWeight={500}
-          color={linkColor}
-          _hover={{
-            textDecoration: "none",
-            color: linkHoverColor,
-          }}
-        >
-          {navItem.label}
-        </Box>
-      ))}
-    </Stack>
-  );
-};
 
 type NavItem = {
   label: string;
