@@ -7,7 +7,7 @@ import NavBar from "@/components/NavBar/NavBar";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
-      <Flex direction="column" minH="100vh">
+      <Flex direction="column" minH="100vh" alignItems="center">
         <NavBar />
         <Flex flex="1">
           <Component {...pageProps} />

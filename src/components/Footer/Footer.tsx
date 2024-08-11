@@ -37,6 +37,7 @@ export const SmallFooter = () => {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
+      width="100%"
     >
       <Container
         as={Stack}
@@ -77,6 +78,7 @@ export default function Footer() {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
+      width="100%"
     >
       <Container
         as={Stack}

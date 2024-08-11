@@ -13,7 +13,7 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export default function NavBar() {
   return (
-    <Box>
+    <Box width="100%">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
