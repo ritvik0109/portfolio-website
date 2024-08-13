@@ -3,14 +3,13 @@
 import {
   Box,
   Flex,
-  Text,
   Button,
   Stack,
   useColorModeValue,
-  useBreakpointValue,
   useColorMode,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import Logo from "../Logo/Logo";
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -28,13 +27,7 @@ export default function NavBar() {
         borderBottom={1}
         align={"center"}
       >
-        <Text
-          textAlign={useBreakpointValue({ base: "center", md: "left" })}
-          fontFamily={"heading"}
-          color={useColorModeValue("gray.800", "white")}
-        >
-          Logo
-        </Text>
+        <Logo colorMode={colorMode} />
 
         <Flex flex={{ base: 1 }} justify="center">
           <Stack direction={"row"} spacing={4}>
