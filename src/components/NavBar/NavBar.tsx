@@ -15,19 +15,17 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkHoverColor = useColorModeValue("gray.800", "#099cff");
 
   return (
     <Box width="100%">
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("white", "background")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Text
@@ -50,8 +48,9 @@ export default function NavBar() {
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
-                  textDecoration: "none",
                   color: linkHoverColor,
+                  transform: "scale(1.1)",
+                  transition: "all 0.4s ease-in-out",
                 }}
               >
                 {navItem.label}

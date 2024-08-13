@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <Flex>
       <Box
-        bg="#02054B"
+        bg="#353754"
         color="white"
         borderRadius="lg"
         m={{ sm: 4, md: 16, lg: 10 }}
@@ -40,7 +40,7 @@ export default function Contact() {
                 <Heading pt={{ base: 4, md: 12 }}>
                   {content.contact.title}
                 </Heading>
-                <Text mt={{ base: 3, md: 3, lg: 2 }} color="gray.500">
+                <Text mt={{ base: 3, md: 3, lg: 2 }} color="#DCE2FF">
                   {content.contact.description}
                 </Text>
                 <Box
@@ -51,33 +51,42 @@ export default function Contact() {
                     <Button
                       size="md"
                       height="48px"
-                      width="300px"
+                      width="320px"
                       variant="ghost"
                       color="#DCE2FF"
-                      _hover={{ border: "2px solid #1C6FEB" }}
-                      leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                      _hover={{
+                        border: "2px solid #0D74FF",
+                        transform: "scale(1.05)",
+                      }}
+                      leftIcon={<MdPhone color="#099cff" size="22px" />}
                     >
                       {content.contact.phone}
                     </Button>
                     <Button
                       size="md"
                       height="48px"
-                      width="300px"
+                      width="320px"
                       variant="ghost"
                       color="#DCE2FF"
-                      _hover={{ border: "2px solid #1C6FEB" }}
-                      leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                      _hover={{
+                        border: "2px solid #0D74FF",
+                        transform: "scale(1.05)",
+                      }}
+                      leftIcon={<MdEmail color="#099cff" size="22px" />}
                     >
                       {content.contact.email}
                     </Button>
                     <Button
                       size="md"
                       height="48px"
-                      width="300px"
+                      width="320px"
                       variant="ghost"
                       color="#DCE2FF"
-                      _hover={{ border: "2px solid #1C6FEB" }}
-                      leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                      _hover={{
+                        border: "2px solid #0D74FF",
+                        transform: "scale(1.05)",
+                      }}
+                      leftIcon={<MdLocationOn color="#099cff" size="22px" />}
                     >
                       {content.contact.city}, {content.contact.country}
                     </Button>
@@ -89,27 +98,35 @@ export default function Contact() {
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: "#0D74FF" }}
+                    _hover={{
+                      bg: "#0D74FF",
+                      transform: "scale(1.2)",
+                      transition: "all 0.3s ease-in-out",
+                    }}
                     icon={<BsGithub size="28px" />}
                   />
                   <IconButton
-                    aria-label="facebook"
+                    aria-label="linkedin"
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: "#0D74FF" }}
+                    _hover={{
+                      bg: "#0D74FF",
+                      transform: "scale(1.2)",
+                      transition: "all 0.3s ease-in-out",
+                    }}
                     icon={<FaLinkedin size="28px" />}
                   />
                 </HStack>
               </Box>
             </WrapItem>
             <WrapItem>
-              <Box bg="white" borderRadius="lg">
-                <Box m={8} color="#0B0E3F">
+              <Box bg="#34495E" borderRadius="lg">
+                <Box m={8} color="#DCE2FF">
                   <VStack spacing={5}>
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
-                      <InputGroup borderColor="#E0E1E7">
+                      <InputGroup borderColor="#DCE2FF">
                         <InputLeftElement pointerEvents="none">
                           <BsPerson color="gray.800" />
                         </InputLeftElement>
@@ -118,7 +135,7 @@ export default function Contact() {
                     </FormControl>
                     <FormControl id="name">
                       <FormLabel>Mail</FormLabel>
-                      <InputGroup borderColor="#E0E1E7">
+                      <InputGroup borderColor="#DCE2FF">
                         <InputLeftElement pointerEvents="none">
                           <MdOutlineEmail color="gray.800" />
                         </InputLeftElement>
@@ -138,9 +155,13 @@ export default function Contact() {
                     <FormControl id="name" float="right">
                       <Button
                         variant="solid"
-                        bg="#0D74FF"
-                        color="white"
-                        _hover={{}}
+                        bg="#099cff"
+                        color="#DCE2FF"
+                        _hover={{
+                          bg: "#0D74FF",
+                          transform: "scale(1.05)",
+                          transition: "all 0.3s ease-in-out",
+                        }}
                       >
                         Send Message
                       </Button>

@@ -30,11 +30,11 @@ export default function Hero() {
           >
             <Text as={"span"}>Hi! I am</Text>
             <br />
-            <Text as={"span"} position={"relative"} color={"red.400"}>
+            <Text as={"span"} position={"relative"} color={"primary"}>
               Ritvik Malhotra
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
+          <Text color={"secondary"}>
             Full Stack Developer (make this moving?)
           </Text>
           <Stack
@@ -43,14 +43,20 @@ export default function Hero() {
           >
             <Button
               rounded={"full"}
-              size={"lg"}
-              fontWeight={"normal"}
+              size="lg"
+              fontWeight="normal"
               px={6}
-              colorScheme={"red"}
-              bg={"red.400"}
-              _hover={{ bg: "red.500" }}
+              variant="outline"
+              color="#099cff"
+              borderColor="#099cff"
+              _hover={{
+                borderColor: "#3cf",
+                color: "#3cf",
+                transform: "scale(1.1)",
+                transition: "all 0.4s ease-in-out",
+              }}
             >
-              Hire Me
+              View my work
             </Button>
           </Stack>
         </Stack>
