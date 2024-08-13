@@ -60,7 +60,7 @@ export default function NavBar() {
           </Stack>
         </Flex>
 
-        <Button onClick={toggleColorMode}>
+        <Button onClick={toggleColorMode} visibility={"hidden"}>
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Flex>
