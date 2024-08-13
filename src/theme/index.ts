@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
-// TODO
+// TODO Light color scheme
 const customTheme = extendTheme({
   initialColorMode: "dark", // Can remove later
   useSystemColorMode: false, // Can remove later
@@ -9,11 +9,12 @@ const customTheme = extendTheme({
     body: "Montserrat, sans-serif",
   },
   colors: {
-    background: "#F8F8F8",
-    primary: "#008080",
-    secondary: "#FF6F61",
-    highlight: "#C3E6CB",
-    text: "#333333",
+    background: "#252746",
+    primary: "#099cff",
+    secondary: "#7C7FA0",
+    tertiary: "#353754",
+    highlight: "#0D74FF",
+    text: "#DCE2FF",
   },
   styles: {
     global: {
