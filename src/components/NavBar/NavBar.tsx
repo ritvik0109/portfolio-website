@@ -7,14 +7,25 @@ import {
   Stack,
   useColorModeValue,
   useColorMode,
+  useBreakpointValue,
+  Link,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Logo from "../Logo/Logo";
+import content from "../../content/content.json";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "#099cff");
+  const iconSize = useBreakpointValue({
+    base: "6vw",
+    sm: "4vw",
+    md: "3vw",
+    lg: "2vw",
+  });
 
   return (
     <Box width="100%">
@@ -52,9 +63,39 @@ export default function NavBar() {
           </Stack>
         </Flex>
 
-        <Button onClick={toggleColorMode} visibility={"hidden"}>
+        {/* <Button onClick={toggleColorMode} visibility={"hidden"}>
           {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
+        </Button> */}
+        <Box display="flex" justifyContent="center" alignItems="center" gap="6">
+          <Link href={content.contact.github} isExternal aria-label="GitHub">
+            <Box
+              as={FaGithub}
+              boxSize={iconSize}
+              transition="transform 0.2s"
+              _hover={{ transform: "scale(1.2)" }}
+            />
+          </Link>
+          <Link
+            href={content.contact.linkedin}
+            isExternal
+            aria-label="LinkedIn"
+          >
+            <Box
+              as={FaLinkedin}
+              boxSize={iconSize}
+              transition="transform 0.2s"
+              _hover={{ transform: "scale(1.2)" }}
+            />
+          </Link>
+          <Link href={"mailto:" + content.contact.email} aria-label="Email">
+            <Box
+              as={MdEmail}
+              boxSize={iconSize}
+              transition="transform 0.2s"
+              _hover={{ transform: "scale(1.2)" }}
+            />
+          </Link>
+        </Box>
       </Flex>
     </Box>
   );
