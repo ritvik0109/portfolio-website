@@ -1,9 +1,12 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
-// TODO Light color scheme
-const customTheme = extendTheme({
-  initialColorMode: "dark", // Can remove later
-  useSystemColorMode: false, // Can remove later
+const config: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
+
+const theme = extendTheme({
+  config,
   fonts: {
     heading: "Montserrat, sans-serif",
     body: "Montserrat, sans-serif",
@@ -26,4 +29,4 @@ const customTheme = extendTheme({
   },
 });
 
-export default customTheme;
+export default theme;
