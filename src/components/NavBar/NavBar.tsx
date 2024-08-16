@@ -63,9 +63,6 @@ export default function NavBar() {
           </Stack>
         </Flex>
 
-        {/* <Button onClick={toggleColorMode} visibility={"hidden"}>
-          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button> */}
         <Box display="flex" justifyContent="center" alignItems="center" gap="6">
           <Link href={content.contact.github} isExternal aria-label="GitHub">
             <Box
@@ -95,6 +92,15 @@ export default function NavBar() {
               _hover={{ transform: "scale(1.2)" }}
             />
           </Link>
+          {/* TODO: Uncomment toggle for Light mode once colour scheme ready  */}
+          {/* <Box
+            as={colorMode === "light" ? MoonIcon : SunIcon}
+            boxSize={iconSize}
+            transition="transform 0.2s"
+            _hover={{ transform: "scale(1.2)", cursor: "pointer" }}
+            onClick={toggleColorMode}
+            aria-label="Toggle color mode"
+          /> */}
         </Box>
       </Flex>
     </Box>
