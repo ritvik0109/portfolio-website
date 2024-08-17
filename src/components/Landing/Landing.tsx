@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Contact from "../Contact/Contact";
 import Hero from "../Hero/Hero";
+import ProjectsGrid from "../Projects/ProjectsGrid";
 import content from "../../content/content.json";
 
 export default function Landing() {
@@ -22,7 +23,7 @@ export default function Landing() {
           {content.projectsSection.title}
         </Heading>
         <Text fontSize="lg">{content.projectsSection.subtitle}</Text>
-        <Text fontSize="lg">Some of your key projects.</Text>
+        <ProjectsGrid />
       </Box>
 
       <Box textAlign="center" mb={10}>
