@@ -7,22 +7,41 @@
     },
     "aboutMe": {
       "title": "About Me",
-      "description": "I am a full-stack developer with a passion for creating efficient and scalable web applications."
+      "description": "A full-stack developer with a passion for creating scalable web applications."
     },
-    "projects": [
-      {
-        "title": "Project One",
-        "description": "A brief description of Project One.",
-        "image": "/images/project1.png",
-        "link": "/projects/project-one"
-      },
-      {
-        "title": "Project Two",
-        "description": "A brief description of Project Two.",
-        "image": "/images/project2.png",
-        "link": "/projects/project-two"
-      }
-    ],
+    "projectsSection": {
+      "projects": [
+        {
+          "title": "EventGoHub",
+          "description": "A scalable event management platform with QR code-based ticketing and secure payment integration.",
+          "githubLink": "/projects/project-one",
+          "projectUrl": "",
+          "techStack": [
+            "React", "NextJS", "Express", "MongoDB"
+          ]
+        },
+        {
+          "title": "MyBnB",
+          "description": "A CLI-based property rental application with enhanced interaction handling using Stanford NLP.",
+          "githubLink": "/projects/project-two",
+          "projectUrl": "",
+          "techStack": [
+            "Java", "SQL", "MongoDB"
+          ]
+        },
+        {
+          "title": "RapidEats",
+          "description": "An Android-based restaurant delivery app utilizing a noSQL database for efficient order management.",
+          "githubLink": "/projects/project-three",
+          "projectUrl": "",
+          "techStack": [
+            "Android Studio", "Java", "Firebase"
+          ]
+        }
+      ],
+      "title": "Projects",
+      "subtitle": "Some key projects and experiments."
+    },
     "contact": {
       "title": "Let's Talk",
       "description": "New projects, collaborations, freelance inqury or even a coffee.",

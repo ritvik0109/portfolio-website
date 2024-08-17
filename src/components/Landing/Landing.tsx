@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Contact from "../Contact/Contact";
 import Hero from "../Hero/Hero";
+import content from "../../content/content.json";
 
 export default function Landing() {
   return (
@@ -9,17 +10,18 @@ export default function Landing() {
         <Hero />
       </Box>
 
-      <Box textAlign="center" mb={10}>
+      {/* <Box textAlign="center" mb={10}>
         <Heading as="h2" size="xl" mb={4}>
           About Me
         </Heading>
         <Text fontSize="lg">Brief introduction about yourself.</Text>
-      </Box>
+      </Box> */}
 
-      <Box textAlign="center" mb={10}>
+      <Box textAlign="center" mt={10} mb={10}>
         <Heading as="h2" size="xl" mb={4}>
-          Projects
+          {content.projectsSection.title}
         </Heading>
+        <Text fontSize="lg">{content.projectsSection.subtitle}</Text>
         <Text fontSize="lg">Some of your key projects.</Text>
       </Box>
 

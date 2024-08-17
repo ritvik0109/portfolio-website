@@ -12,6 +12,7 @@ import {
   createIcon,
   IconProps,
 } from "@chakra-ui/react";
+import content from "../../content/content.json";
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 20, md: 40 }}
         direction={{ base: "column", md: "row" }}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -35,7 +36,10 @@ export default function Hero() {
             </Text>
           </Heading>
           <Text color={"secondary"}>
-            Full Stack Developer (make this moving?)
+            {content.aboutMe.description}
+            {/* (make this moving?) */}
+            {/* Software Engineer, DIY enthusiast, something hobbist */}
+            {/* Driven by curiosity and a passion for continuous learning in tech. */}
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
