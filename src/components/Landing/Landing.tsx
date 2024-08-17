@@ -18,7 +18,11 @@ export default function Landing() {
         <Text fontSize="lg">Brief introduction about yourself.</Text>
       </Box> */}
 
-      <Box textAlign="center" mt={10} mb={10}>
+      <Box
+        textAlign="center"
+        mt={{ base: 20, md: 32 }}
+        mb={{ base: 20, md: 40 }}
+      >
         <Heading as="h2" size="xl" mb={4}>
           {content.projectsSection.title}
         </Heading>
