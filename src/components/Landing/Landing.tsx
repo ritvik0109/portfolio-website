@@ -19,6 +19,7 @@ export default function Landing() {
       </Box> */}
 
       <Box
+        id="portfolio"
         textAlign="center"
         mt={{ base: 20, md: 32 }}
         mb={{ base: 20, md: 40 }}
@@ -30,7 +31,7 @@ export default function Landing() {
         <ProjectsGrid />
       </Box>
 
-      <Box textAlign="center" mb={10}>
+      <Box id="contactme" textAlign="center" mb={10}>
         <Contact />
       </Box>
     </Flex>

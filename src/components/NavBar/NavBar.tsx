@@ -16,6 +16,26 @@ import content from "../../content/content.json";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+type NavItem = {
+  label: string;
+  href?: string;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  // {
+  //   label: "About Me",
+  //   href: "#",
+  // },
+  {
+    label: "Portfolio",
+    href: "#portfolio",
+  },
+  {
+    label: "Contact",
+    href: "#contactme",
+  },
+];
+
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const linkColor = useColorModeValue("gray.600", "gray.200");
@@ -106,23 +126,3 @@ export default function NavBar() {
     </Box>
   );
 }
-
-type NavItem = {
-  label: string;
-  href?: string;
-};
-
-const NAV_ITEMS: NavItem[] = [
-  {
-    label: "About Me",
-    href: "#",
-  },
-  {
-    label: "Portfolio",
-    href: "#",
-  },
-  {
-    label: "Contact",
-    href: "#",
-  },
-];
