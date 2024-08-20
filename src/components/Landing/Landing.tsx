@@ -6,10 +6,8 @@ import content from "../../content/content.json";
 
 export default function Landing() {
   return (
-    <Flex direction="column" align="center" justify="center" minH="100vh" p={4}>
-      <Box textAlign="center" mb={10}>
-        <Hero />
-      </Box>
+    <Flex direction="column" align="center" justify="center" minH="100vh">
+      <Hero />
 
       {/* <Box textAlign="center" mb={10}>
         <Heading as="h2" size="xl" mb={4}>

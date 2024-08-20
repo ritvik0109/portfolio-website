@@ -12,8 +12,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Flex flex="1" w="100%" maxW="1200px" px={{ base: 4, md: 8, lg: 12 }}>
           <Component {...pageProps} />
         </Flex>
-        <Footer />
-        {/* <SmallFooter /> */}
+        {/* <Footer /> */}
+        <SmallFooter />
       </Flex>
     </ChakraProvider>
   );
