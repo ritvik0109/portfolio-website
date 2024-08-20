@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={customTheme}>
       <Flex direction="column" minH="100vh" alignItems="center">
         <NavBar />
-        <Flex flex="1">
+        <Flex flex="1" w="100%" maxW="1200px" px={{ base: 4, md: 8, lg: 12 }}>
           <Component {...pageProps} />
         </Flex>
         <Footer />

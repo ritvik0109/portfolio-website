@@ -16,7 +16,6 @@ import content from "../../content/content.json";
 
 export default function Hero() {
   return (
-    <Container maxW={"7xl"}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -95,7 +94,6 @@ export default function Hero() {
           />
         </Flex>
       </Stack>
-    </Container>
   );
 }
 

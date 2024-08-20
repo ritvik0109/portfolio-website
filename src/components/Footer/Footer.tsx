@@ -19,6 +19,7 @@ export const SmallFooter = () => {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
       width="100%"
+      px={{ base: 4, md: 8, lg: 12 }}
     >
       <Container
         as={Stack}
@@ -61,10 +62,11 @@ export default function Footer() {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
       width="100%"
+      px={{ base: 4, md: 8, lg: 12 }}
     >
       <Container
         as={Stack}
-        maxW={"6xl"}
+        maxW={"10xl"}
         py={4}
         direction={{ base: "column", md: "row" }}
         spacing={2}
