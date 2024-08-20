@@ -9,73 +9,81 @@ import {
   Button,
   Image,
   Icon,
-  createIcon,
   IconProps,
 } from "@chakra-ui/react";
 import content from "../../content/content.json";
 
 export default function Hero() {
   return (
-      <Stack
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 40 }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+    <Stack
+      align={"center"}
+      spacing={{ base: 8, md: 10, lg: 12, xl: 16 }}
+      py={{ base: 20, md: 28 }}
+      direction={{ base: "column", md: "row" }}
+      justifyContent={{ base: "flex-start", md: "space-between" }}
+    >
+      <Stack flex={1} mr={{ base: 0, md: 4, lg: 8 }} mb={{ base: 8, md: 0 }}>
+        <Heading
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "4xl", md: "5xl", lg: "7xl" }}
+          pb={4}
+        >
+          <Text as={"span"}>Hi! I am</Text>
+          <br />
+          <Text
+            as={"span"}
+            position={"relative"}
+            color={"primary"}
+            whiteSpace="nowrap"
           >
-            <Text as={"span"}>Hi! I am</Text>
-            <br />
-            <Text as={"span"} position={"relative"} color={"primary"}>
-              Ritvik Malhotra
-            </Text>
-          </Heading>
-          <Text color={"secondary"}>
-            {content.aboutMe.description}
-            {/* (make this moving?) */}
-            {/* Software Engineer, DIY enthusiast, something hobbist */}
-            {/* Driven by curiosity and a passion for continuous learning in tech. */}
+            Ritvik Malhotra
           </Text>
-          <Stack
-            spacing={{ base: 4, sm: 6 }}
-            direction={{ base: "column", sm: "row" }}
-          >
-            <Button
-              rounded={"full"}
-              size="lg"
-              fontWeight="normal"
-              px={6}
-              variant="outline"
-              color="#099cff"
-              borderColor="#099cff"
-              _hover={{
-                borderColor: "#3cf",
-                color: "#3cf",
-                transform: "scale(1.1)",
-                transition: "all 0.4s ease-in-out",
-              }}
+        </Heading>
+        <Text color={"secondary"} pb={{ base: 12, md: 16, lg: 20 }}>
+          {content.aboutMe.description}
+          {/* (make this moving?) */}
+          {/* Software Engineer, DIY enthusiast, something hobbist */}
+          {/* Driven by curiosity and a passion for continuous learning in tech. */}
+        </Text>
+        <Stack
+          spacing={{ base: 4, sm: 6 }}
+          direction={{ base: "column", sm: "row" }}
+        >
+          <Button
+            rounded={"full"}
+            size="lg"
+            fontWeight="normal"
+            px={6}
+            variant="outline"
+            color="#099cff"
+            borderColor="#099cff"
+            _hover={{
+              borderColor: "#3cf",
+              color: "#3cf",
+              transform: "scale(1.1)",
+              transition: "all 0.4s ease-in-out",
+            }}
             onClick={() => {
               document
                 .getElementById("portfolio")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            >
-              View my work
-            </Button>
-          </Stack>
+          >
+            View my work
+          </Button>
         </Stack>
-        <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
-          position={"relative"}
-          w={"full"}
-        >
-          {/* <Blob
+      </Stack>
+      <Flex
+        flex={1}
+        justify={"center"}
+        align={"center"}
+        position={"relative"}
+        w={"full"}
+        ml={{ base: 0, md: 4, lg: 8 }}
+        mt={{ base: 8, md: 0 }}
+      >
+        {/* <Blob
             w={"150%"}
             h={"150%"}
             position={"absolute"}
@@ -84,16 +92,16 @@ export default function Hero() {
             zIndex={-1}
             color={useColorModeValue("red.50", "red.400")}
           /> */}
-          <Image
-            alt={"Hero Image"}
-            fit={"cover"}
-            align={"center"}
-            w={"100%"}
-            h={"100%"}
-            src={"/images/developer.png"}
-          />
-        </Flex>
-      </Stack>
+        <Image
+          alt={"Hero Image"}
+          fit={"cover"}
+          align={"center"}
+          w={"100%"}
+          h={"100%"}
+          src={"/images/developer.png"}
+        />
+      </Flex>
+    </Stack>
   );
 }
 
