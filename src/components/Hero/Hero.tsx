@@ -59,6 +59,11 @@ export default function Hero() {
                 transform: "scale(1.1)",
                 transition: "all 0.4s ease-in-out",
               }}
+            onClick={() => {
+              document
+                .getElementById("portfolio")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             >
               View my work
             </Button>
