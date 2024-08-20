@@ -9,6 +9,7 @@ import {
   useColorMode,
   useBreakpointValue,
   Link,
+  Divider,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Logo from "../Logo/Logo";
@@ -113,7 +114,14 @@ export default function NavBar() {
             />
           </Link>
           {/* TODO: Uncomment toggle for Light mode once colour scheme ready  */}
-          {/* <Box
+            {/* <Divider
+              orientation="vertical"
+              h={"28px"}
+              borderWidth={"1px"}
+              color={useColorModeValue("black", "white")}
+              colorScheme={useColorModeValue("black", "white")}
+            />
+            <Box
             as={colorMode === "light" ? MoonIcon : SunIcon}
             boxSize={iconSize}
             transition="transform 0.2s"
