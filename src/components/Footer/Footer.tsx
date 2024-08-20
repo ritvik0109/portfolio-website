@@ -6,7 +6,6 @@ import {
   Link,
   Stack,
   useBreakpointValue,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -15,8 +14,6 @@ import content from "../../content/content.json";
 import Logo from "../Logo/Logo";
 
 export const SmallFooter = () => {
-  const { colorMode } = useColorMode();
-
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -31,7 +28,7 @@ export const SmallFooter = () => {
         justify={"center"}
         align={"center"}
       >
-        <Logo colorMode={colorMode} />
+        <Logo />
         {/* <Stack direction={"row"} spacing={6}>
           <Box as="a" href={"#"}>
             Home
@@ -52,7 +49,6 @@ export const SmallFooter = () => {
 };
 
 export default function Footer() {
-  const { colorMode } = useColorMode();
   const iconSize = useBreakpointValue({
     base: "6vw",
     sm: "4vw",
@@ -75,7 +71,7 @@ export default function Footer() {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Logo colorMode={colorMode} />
+        <Logo />
         <Box display="flex" justifyContent="center" alignItems="center" gap="6">
           <Link href={content.contact.github} isExternal aria-label="GitHub">
             <Box

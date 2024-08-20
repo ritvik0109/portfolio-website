@@ -59,8 +59,7 @@ export default function NavBar() {
         borderBottom={1}
         align={"center"}
       >
-        <Logo colorMode={colorMode} />
-
+        <Logo />
         <Flex flex={{ base: 1 }} justify="center">
           <Stack direction={"row"} spacing={4}>
             {NAV_ITEMS.map((navItem) => (
