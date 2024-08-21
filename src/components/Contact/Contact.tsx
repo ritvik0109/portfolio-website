@@ -9,120 +9,134 @@ import {
   Button,
   VStack,
   HStack,
-  Wrap,
-  WrapItem,
   FormControl,
   FormLabel,
   Input,
   InputGroup,
   InputLeftElement,
   Textarea,
+  useColorModeValue,
+  Link,
+  Stack,
+  useToast,
 } from "@chakra-ui/react";
 import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
-import { BsGithub, BsPerson } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+import { BsPerson } from "react-icons/bs";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import content from "../../content/content.json";
 
 export default function Contact() {
+  const linkHoverColor = useColorModeValue("gray.800", "#099cff");
+
   return (
     <Flex>
       <Box
         bg="#353754"
-        color="white"
+        color="#DCE2FF"
         borderRadius="lg"
         m={{ sm: 4, md: 16, lg: 10 }}
         p={{ sm: 5, md: 5, lg: 16 }}
       >
         <Box p={4}>
-          <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-            <WrapItem>
-              <Box>
-                <Heading pt={{ base: 4, md: 12 }}>
-                  {content.contact.title}
-                </Heading>
-                <Text mt={{ base: 3, md: 3, lg: 2 }} color="#DCE2FF">
-                  {content.contact.description}
-                </Text>
-                <Box
-                  pt={{ base: 8, sm: 8, md: 10, lg: 12 }}
-                  pb={{ base: 7, sm: 7, md: 8 }}
-                >
-                  <VStack pl={0} spacing={3} alignItems="center">
-                    <Button
-                      size="md"
-                      height="48px"
-                      width="320px"
-                      variant="ghost"
-                      color="#DCE2FF"
-                      _hover={{
-                        border: "2px solid #0D74FF",
-                        transform: "scale(1.05)",
-                      }}
-                      leftIcon={<MdPhone color="#099cff" size="22px" />}
-                    >
-                      {content.contact.phone}
-                    </Button>
-                    <Button
-                      size="md"
-                      height="48px"
-                      width="320px"
-                      variant="ghost"
-                      color="#DCE2FF"
-                      _hover={{
-                        border: "2px solid #0D74FF",
-                        transform: "scale(1.05)",
-                      }}
-                      leftIcon={<MdEmail color="#099cff" size="22px" />}
-                    >
-                      {content.contact.email}
-                    </Button>
-                    <Button
-                      size="md"
-                      height="48px"
-                      width="320px"
-                      variant="ghost"
-                      color="#DCE2FF"
-                      _hover={{
-                        border: "2px solid #0D74FF",
-                        transform: "scale(1.05)",
-                      }}
-                      leftIcon={<MdLocationOn color="#099cff" size="22px" />}
-                    >
-                      {content.contact.city}, {content.contact.country}
-                    </Button>
-                  </VStack>
-                </Box>
-                <HStack spacing={5} px={5} justifyContent="center">
-                  <IconButton
-                    aria-label="github"
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}
+          >
+            <Box>
+              <Heading pt={{ base: 4, md: 12 }}>
+                {content.contact.title}
+              </Heading>
+              <Text mt={{ base: 3, md: 3, lg: 2 }}>
+                {content.contact.description}
+              </Text>
+              <Box
+                pt={{ base: 8, sm: 8, md: 10, lg: 12 }}
+                pb={{ base: 7, sm: 7, md: 8 }}
+              >
+                <VStack pl={0} spacing={3} alignItems="center">
+                  <Button
+                    size="md"
+                    height="48px"
+                    width="320px"
                     variant="ghost"
-                    size="lg"
-                    isRound={true}
+                    color="#DCE2FF"
                     _hover={{
-                      bg: "#0D74FF",
-                      transform: "scale(1.2)",
-                      transition: "all 0.3s ease-in-out",
+                      border: "2px solid #0D74FF",
+                      transform: "scale(1.05)",
                     }}
-                    icon={<BsGithub size="28px" />}
-                  />
-                  <IconButton
-                    aria-label="linkedin"
+                    leftIcon={<MdPhone color="#099cff" size="22px" />}
+                  >
+                    {content.contact.phone}
+                  </Button>
+                  <Button
+                    size="md"
+                    height="48px"
+                    width="320px"
                     variant="ghost"
-                    size="lg"
-                    isRound={true}
+                    color="#DCE2FF"
                     _hover={{
-                      bg: "#0D74FF",
-                      transform: "scale(1.2)",
-                      transition: "all 0.3s ease-in-out",
+                      border: "2px solid #0D74FF",
+                      transform: "scale(1.05)",
                     }}
-                    icon={<FaLinkedin size="28px" />}
-                  />
-                </HStack>
+                    leftIcon={<MdEmail color="#099cff" size="22px" />}
+                  >
+                    {content.contact.email}
+                  </Button>
+                  <Button
+                    size="md"
+                    height="48px"
+                    width="320px"
+                    variant="ghost"
+                    color="#DCE2FF"
+                    _hover={{
+                      border: "2px solid #0D74FF",
+                      transform: "scale(1.05)",
+                    }}
+                    leftIcon={<MdLocationOn color="#099cff" size="22px" />}
+                  >
+                    {content.contact.city}, {content.contact.country}
+                  </Button>
+                </VStack>
               </Box>
-            </WrapItem>
-            <WrapItem>
-              <Box bg="#34495E" borderRadius="lg">
-                <Box m={8} color="#DCE2FF">
+              <HStack spacing={10} px={5} justifyContent="center">
+                <Link
+                  href={content.contact.github}
+                  isExternal
+                  aria-label="GitHub"
+                >
+                  <Box
+                    as={FaGithub}
+                    boxSize={{ base: "32px", lg: "36px" }}
+                    color="#DCE2FF"
+                    transition="transform 0.2s"
+                    _hover={{
+                      transform: "scale(1.2)",
+                      transition: "all 0.4s ease-in-out",
+                      color: linkHoverColor,
+                    }}
+                  />
+                </Link>
+                <Link
+                  href={content.contact.linkedin}
+                  isExternal
+                  aria-label="LinkedIn"
+                >
+                  <Box
+                    as={FaLinkedin}
+                    boxSize={{ base: "32px", lg: "36px" }}
+                    color="#DCE2FF"
+                    transition="transform 0.2s"
+                    _hover={{
+                      transform: "scale(1.2)",
+                      transition: "all 0.4s ease-in-out",
+                      color: linkHoverColor,
+                    }}
+                  />
+                </Link>
+              </HStack>
+            </Box>
+            <Box bg="#34495E" borderRadius="lg">
+              <Box m={8} color="#DCE2FF">
                   <VStack spacing={5}>
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
@@ -169,8 +183,8 @@ export default function Contact() {
                   </VStack>
                 </Box>
               </Box>
-            </WrapItem>
-          </Wrap>
+            </Box>
+          </Stack>
         </Box>
       </Box>
     </Flex>
