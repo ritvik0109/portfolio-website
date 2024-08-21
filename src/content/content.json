@@ -14,7 +14,7 @@
         {
           "title": "EventGoHub",
           "description": "A scalable event management platform with QR code-based ticketing and secure payment integration.",
-          "githubLink": "/projects/project-one",
+          "githubLink": "https://github.com/ritvik0109",
           "projectUrl": "",
           "techStack": [
             "React", "NextJS", "Express", "MongoDB"
@@ -23,7 +23,7 @@
         {
           "title": "MyBnB",
           "description": "A CLI-based property rental application with enhanced interaction handling using Stanford NLP.",
-          "githubLink": "/projects/project-two",
+          "githubLink": "https://github.com/ritvik0109/MyBnB",
           "projectUrl": "",
           "techStack": [
             "Java", "SQL", "MongoDB"
@@ -32,7 +32,7 @@
         {
           "title": "RapidEats",
           "description": "An Android-based restaurant delivery app utilizing a noSQL database for efficient order management.",
-          "githubLink": "/projects/project-three",
+          "githubLink": "https://github.com/ritvik0109",
           "projectUrl": "",
           "techStack": [
             "Android Studio", "Java", "Firebase"
