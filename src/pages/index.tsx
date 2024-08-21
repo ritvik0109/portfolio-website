@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Ritvik Malhotra</title>
       </Head>
-      <Landing />;
+      <Landing />
     </>
   );
 }
