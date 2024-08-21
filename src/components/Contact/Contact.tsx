@@ -28,6 +28,47 @@ import content from "../../content/content.json";
 export default function Contact() {
   const linkHoverColor = useColorModeValue("gray.800", "#099cff");
 
+  const toast = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("https://formbold.com/s/3Lbb1", {
+        method: "POST",
+        body: new URLSearchParams(data as any), // Convert data to URLSearchParams
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Failed to send message.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "An error occurred.",
+        description: "Unable to send message.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <Flex>
       <Box
@@ -137,6 +178,7 @@ export default function Contact() {
             </Box>
             <Box bg="#34495E" borderRadius="lg">
               <Box m={8} color="#DCE2FF">
+                <form onSubmit={handleSubmit}>
                   <VStack spacing={5}>
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
@@ -144,19 +186,19 @@ export default function Contact() {
                         <InputLeftElement pointerEvents="none">
                           <BsPerson color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input type="text" name="name" size="md" required />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="email">
                       <FormLabel>Mail</FormLabel>
                       <InputGroup borderColor="#DCE2FF">
                         <InputLeftElement pointerEvents="none">
                           <MdOutlineEmail color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input type="email" name="email" size="md" required />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="message">
                       <FormLabel>Message</FormLabel>
                       <Textarea
                         borderColor="gray.300"
@@ -164,10 +206,13 @@ export default function Contact() {
                           borderRadius: "gray.300",
                         }}
                         placeholder="message"
+                        name="message"
+                        required
                       />
                     </FormControl>
-                    <FormControl id="name" float="right">
+                    <FormControl id="submit" float="right">
                       <Button
+                        type="submit"
                         variant="solid"
                         bg="#099cff"
                         color="#DCE2FF"
@@ -181,7 +226,7 @@ export default function Contact() {
                       </Button>
                     </FormControl>
                   </VStack>
-                </Box>
+                </form>
               </Box>
             </Box>
           </Stack>
